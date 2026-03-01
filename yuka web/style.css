@@ -1,0 +1,415 @@
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+html,
+body {
+  width: 100%;
+  height: 100%;
+}
+
+@font-face {
+  font-family: Magnetlight;
+  src: url(MagnetTrial-ExtraLight-BF65f3b2c458ace.otf);
+}
+
+.wrap {
+  width: 100%;
+  min-height: 100vh;
+}
+
+.nav {
+  width: 100%;
+  height: 10vh;
+  background-color: #D3CBC0;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 0 5%;
+}
+
+.leftnav {
+  text-align: center;
+}
+
+.middlenav {
+  display: flex;
+  gap: 2vw;
+}
+
+.middlenav p {
+  font-family: magnetlight;
+  font-size: clamp(11px, 1.1vw, 15px);
+  cursor: pointer;
+}
+
+.rightnav {
+  display: flex;
+  align-items: center;
+  gap: 1.2vw;
+}
+
+.nav-link {
+  font-family: magnetlight;
+  font-size: clamp(10px, 1vw, 13px);
+  font-weight: 300;
+  letter-spacing: 0.3px;
+  color: #1D1D1B;
+  text-decoration: none;
+  display: flex;
+  align-items: center;
+  gap: 5px;
+  transition: opacity 0.2s ease;
+  white-space: nowrap;
+}
+
+.nav-link-icon {
+  font-size: clamp(10px, 1vw, 13px);
+  color: #1D1D1B;
+}
+
+.nav-link:hover {
+  opacity: 0.6;
+}
+
+.nav-icon-btn {
+  color: #1D1D1B;
+  font-size: clamp(12px, 1.1vw, 14px);
+  text-decoration: none;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: clamp(28px, 2.2vw, 32px);
+  height: clamp(28px, 2.2vw, 32px);
+  border: 1.5px solid #1D1D1B;
+  border-radius: 6px;
+  transition: background-color 0.2s ease;
+}
+
+.nav-icon-btn:hover {
+  background-color: rgba(0, 0, 0, 0.06);
+}
+
+.hero {
+  height: 90vh;
+  width: 100%;
+  background-color: #6c6c64;
+  position: relative;
+}
+
+.hero img {
+  height: 100%;
+  width: 100%;
+  object-fit: cover;
+}
+
+.overlay {
+  height: 100%;
+  width: 100%;
+  display: flex;
+  align-items: flex-start;
+  justify-content: space-between;
+  flex-direction: column;
+  position: absolute;
+  top: 0;
+  padding: 5vh 8% 4vh 8%;
+}
+
+.overlay h1 {
+  font-size: clamp(28px, 5vw, 60px);
+  font-family: magnetlight;
+  width: 60%;
+  line-height: 1.1;
+}
+
+.card-container {
+  display: flex;
+  gap: 1.5vw;
+  flex-wrap: wrap;
+}
+
+.card {
+  height: clamp(200px, 20vw, 280px);
+  width: clamp(180px, 18vw, 280px);
+  background-color: rgba(255, 255, 255, 0.42);
+  border-radius: 20px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  backdrop-filter: blur(10px);
+  transition: all ease 0.1s;
+  position: relative;
+}
+
+.text-container p {
+  font-size: clamp(16px, 1.8vw, 26px);
+  font-family: magnetlight;
+  font-weight: 600;
+  transition: all ease 0.3s;
+}
+
+.card:hover {
+  background-color: #FFFDF5;
+}
+
+.text-container {
+  height: 4vh;
+  width: 100%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  overflow: hidden;
+}
+
+.card:hover .text-container p {
+  margin-top: -20%;
+}
+
+.para-container {
+  width: 100%;
+  position: absolute;
+  display: flex;
+  align-items: flex-start;
+  justify-content: flex-start;
+  flex-direction: column;
+  gap: 5px;
+  top: 10%;
+}
+
+.para-text-container {
+  font-size: 15px;
+  position: relative;
+  height: 2vh;
+  width: 100%;
+  overflow: hidden;
+}
+
+.para-text-container p {
+  font-family: magnetlight;
+  font-size: clamp(10px, 0.9vw, 12px);
+  position: absolute;
+  left: 10px;
+  bottom: -100%;
+  transition: all ease 0.5s;
+}
+
+.card:hover .para-text-container p {
+  bottom: 0;
+}
+
+.line-horizontal {
+  height: 1px;
+  width: 0%;
+  background-color: #000;
+  position: absolute;
+  bottom: 20%;
+  left: 10px;
+  transition: all ease 0.5s;
+}
+
+.card:hover .line-horizontal {
+  width: 90%;
+}
+
+.button-container {
+  position: absolute;
+  display: flex;
+  bottom: 5%;
+  justify-content: space-between;
+  width: 100%;
+  padding: 0 10px;
+  opacity: 0;
+  transition: all ease 0.5s;
+}
+
+.button-container p {
+  font-family: magnetlight;
+  font-size: clamp(10px, 0.9vw, 12px);
+}
+
+.card:hover .button-container {
+  opacity: 1;
+  bottom: 7%;
+}
+
+.text-section {
+  width: 100%;
+  height: 100vh;
+  background-color: #D7D2C0;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  gap: 3vh;
+  overflow: hidden;
+}
+
+.text-row {
+  width: 100%;
+  overflow: hidden;
+  padding: 1.5vh 0;
+}
+
+.text-track {
+  display: inline-flex;
+  align-items: center;
+  gap: 3vw;
+  white-space: nowrap;
+}
+
+.text-track div {
+  font-family: magnetlight;
+  font-size: clamp(18px, 2.5vw, 36px);
+  font-weight: 300;
+  color: #1D1D1B;
+  letter-spacing: 0.02em;
+}
+
+.text-dot {
+  font-size: clamp(14px, 2vw, 28px) !important;
+  color: #1D1D1B;
+  opacity: 0.5;
+}
+
+@keyframes scrollLeft {
+  0% {
+    transform: translateX(0);
+  }
+
+  100% {
+    transform: translateX(-50%);
+  }
+}
+
+.text-track--left {
+  animation: scrollLeft 18s linear infinite;
+}
+
+@keyframes scrollRight {
+  0% {
+    transform: translateX(-50%);
+  }
+
+  100% {
+    transform: translateX(0);
+  }
+}
+
+.text-track--right {
+  animation: scrollRight 18s linear infinite;
+}
+
+@media (max-width: 1024px) {
+  .nav {
+    padding: 0 4%;
+  }
+
+  .overlay {
+    padding: 4vh 5% 3vh 5%;
+  }
+
+  .overlay h1 {
+    width: 75%;
+  }
+
+  .card {
+    height: clamp(160px, 22vw, 240px);
+    width: clamp(150px, 22vw, 240px);
+  }
+
+  .middlenav {
+    gap: 3vw;
+  }
+}
+
+@media (max-width: 767px) {
+  .nav {
+    height: auto;
+    padding: 2vh 5%;
+    flex-wrap: wrap;
+    gap: 1.5vh;
+  }
+
+  .middlenav {
+    order: 3;
+    width: 100%;
+    justify-content: center;
+    flex-wrap: wrap;
+    gap: 4vw;
+    padding-bottom: 1.5vh;
+  }
+
+  .middlenav p {
+    font-size: 14px;
+  }
+
+  .rightnav {
+    gap: 3vw;
+  }
+
+  .nav-link {
+    font-size: 12px;
+  }
+
+  .hero {
+    height: 60vh;
+  }
+
+  .overlay {
+    padding: 3vh 5%;
+  }
+
+  .overlay h1 {
+    font-size: clamp(22px, 6vw, 38px);
+    width: 90%;
+  }
+
+  .card-container {
+    gap: 3vw;
+    justify-content: center;
+  }
+
+  .card {
+    height: clamp(140px, 38vw, 200px);
+    width: clamp(130px, 38vw, 200px);
+  }
+
+  .text-section {
+    height: 60vh;
+    gap: 2vh;
+  }
+
+  .text-track div {
+    font-size: clamp(16px, 4vw, 24px);
+  }
+
+  .text-dot {
+    font-size: clamp(12px, 3vw, 20px) !important;
+  }
+}
+
+@media (max-width: 480px) {
+  .middlenav {
+    gap: 3vw;
+  }
+
+  .overlay h1 {
+    width: 100%;
+    font-size: clamp(20px, 7vw, 32px);
+  }
+
+  .card-container {
+    flex-direction: column;
+    align-items: center;
+  }
+
+  .card {
+    height: 45vw;
+    width: 75vw;
+  }
+
+  .nav-link {
+    display: none;
+  }
+}
