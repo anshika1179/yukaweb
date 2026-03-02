@@ -141,6 +141,7 @@ body {
   backdrop-filter: blur(10px);
   transition: all ease 0.1s;
   position: relative;
+  overflow: hidden;
 }
 
 .text-container p {
@@ -176,6 +177,8 @@ body {
   flex-direction: column;
   gap: 5px;
   top: 10%;
+  bottom: 25%;
+  overflow: hidden;
 }
 
 .para-text-container {
@@ -184,19 +187,19 @@ body {
   height: 2vh;
   width: 100%;
   overflow: hidden;
+  flex-shrink: 0;
 }
 
 .para-text-container p {
   font-family: magnetlight;
   font-size: clamp(10px, 0.9vw, 12px);
-  position: absolute;
-  left: 10px;
-  bottom: -100%;
-  transition: all ease 0.5s;
+  padding-left: 10px;
+  transform: translateY(100%);
+  transition: transform ease 0.5s;
 }
 
 .card:hover .para-text-container p {
-  bottom: 0;
+  transform: translateY(0);
 }
 
 .line-horizontal {
